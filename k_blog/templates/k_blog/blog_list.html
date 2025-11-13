@@ -1,0 +1,48 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech Trends Blog</title>
+  <link rel="stylesheet" href="{% static 'k_blog/css/blog_list.css' %}">
+  
+</head>
+<body>
+  <header>
+    <h1>Tech Trends Blog</h1>
+    <p>Exploring Technology, Artificial Intelligence, and Coding</p>
+  </header>
+
+  <main>
+    <!-- Technology Section -->
+    <article>
+      <img src="{% static 'k_blog/img/vr-goggles.jpg' %}" alt="Latest gadgets">
+      <div class="content">
+        <h2>Latest in Technology</h2>
+        <p>From foldable phones to advanced wearables, technology continues to evolve at lightning speed, shaping how we live and work.</p>
+      </div>
+    </article>
+
+    <!-- Artificial Intelligence Section -->
+    <article>
+      <img src="{% static 'k_blog/img/ai.jpg' %}" alt="AI and automation">
+      <div class="content">
+        <h2>AI and Automation</h2>
+        <p>Artificial Intelligence is transforming industries by automating tasks, analyzing data, and improving decision-making.</p>
+      </div>
+    </article>
+
+
+    <!-- Virtual Reality Section -->
+    <article>
+      <img src="{% static 'k_blog/img/programmer.jpg' %}" alt="VR coding">
+      <div class="content">
+        <h2>Coding</h2>
+        <p>Coding allows developers to create software, websites, and apps, transforming ideas into functional digital solutions.</p>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>

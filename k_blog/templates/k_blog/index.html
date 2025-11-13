@@ -1,0 +1,55 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome — Konkonsa Blog</title>
+  <link rel="stylesheet" href="{% static 'k_blog/css/base.css' %}">
+
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="welcome-title">
+    <div class="logo" aria-hidden="true">M</div>
+
+    <div class="content">
+      <h1 id="welcome-title">Welcome to Konkonsa Blog</h1>
+      <p>A clean starting page. Use the buttons below to wire up routing later — they include helpful <code>data-route</code> attributes so you can plug in your router (Django, React Router, etc.) when ready.</p>
+
+      <div class="buttons" role="navigation" aria-label="Primary actions">
+        <button class="btn-primary" id="btn-start" data-route="/start" button onclick="window.location.href='{% url 'k_home' %}'">Get started</button>
+        <button class="btn-ghost" id="btn-about" data-route="/about">About</button>
+        <button class="btn-ghost" id="btn-contact" data-route="/contact">Contact</button>
+      </div>
+
+      <div class="hint">Tip: replace the click handler in <code>app.js</code> (below) with your routing code.</div>
+    </div>
+  </main>
+
+  <script>
+    // Simple placeholder routing handler — replace this with your router (e.g., window.location, Django URL, React Router's navigate, etc.)
+    document.querySelectorAll('button[data-route]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const route = btn.getAttribute('data-route') || '/';
+        // For now we just log and show a small animation; later replace this with actual routing logic
+        console.log('route requested ->', route);
+        btn.animate([
+          { transform: 'translateY(0)', offset: 0 },
+          { transform: 'translateY(-4px)', offset: 0.5 },
+          { transform: 'translateY(0)', offset: 1 }
+        ], { duration: 260 });
+
+        // example: when ready, swap this for your routing preference:
+        // window.location.href = route;            // simple page navigation
+        // router.navigate(route);                 // single-page app router
+        // fetch(route).then(...).catch(...);      // API-driven flow
+
+        // temporary visual feedback
+        const old = btn.textContent;
+        btn.textContent = 'Opening...';
+        setTimeout(() => btn.textContent = old, 700);
+      });
+    });
+  </script>
+</body>
+</html>
