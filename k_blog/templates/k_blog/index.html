@@ -1,9 +1,10 @@
-{% extends "k_blog/base.html" %}
-{% load static%}
+{% extends 'k_blog/base.html' %}
+{% load static %}
 
+{% block title %}Our Blog Homepage{% endblock %}
 
-
-    <!-- Blog Hero Section -->
+{% block content%}
+ <!-- Blog Hero Section -->
     <section id="blog-hero" class="blog-hero section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -668,5 +669,8 @@
         </div>
       </div>
     </section><!-- /Call To Action Section -->
+{% endblock %}
+
+   
 
 
