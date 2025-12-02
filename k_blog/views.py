@@ -9,3 +9,5 @@ def home(request):
 def blogHome(request):
     return render(request=request, template_name="k_blog/blog_list.html")
 
+def login(request):
+    return render(request=request, template_name="k_blog/login.html")
