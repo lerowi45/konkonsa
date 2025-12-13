@@ -56,6 +56,11 @@
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
           </div>
 
+          <form action="{% url "logout" %}" method="post">
+            {% csrf_token %}
+          <button type="submit" class="btn btn-outline-secondary">Logout</button>
+          </form>
+
           <form class="search-form ms-4">
             <input type="text" placeholder="Search..." class="form-control">
             <button type="submit" class="btn"><i class="bi bi-search"></i></button>
@@ -103,7 +108,7 @@
 
   <main class="main">
     {% block content %}
-        {% comment %}  pagee content goes here {% endcomment %}
+        {% comment %}  page content goes here {% endcomment %}
     {% endblock %}
   </main>
 
