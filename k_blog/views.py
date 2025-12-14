@@ -29,5 +29,10 @@ def signup(request):
     return render(request,"k_blog/signup.html", {'form':form})
 
 def create_post(request):
-    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save()
+    else:
+        form = PostForm()
     return render(request,"k_blog/create_post.html", {'form':form})

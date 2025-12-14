@@ -5,4 +5,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = KPost
         fields = ["title", "content"]
-        
+        # widgets = {
+        #     'title': forms.TextInput(),
+        #     'content': forms.Textarea(),
+        # }
