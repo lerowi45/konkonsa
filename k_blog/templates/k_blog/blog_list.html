@@ -1,48 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tech Trends Blog</title>
-  <link rel="stylesheet" href="{% static 'k_blog/css/blog_list.css' %}">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Blog</title>
+  <link rel="stylesheet" href="{% static 'k_blog/css/base.css'%}">
 </head>
 <body>
+
+  <!-- Navbar -->
   <header>
-    <h1>Tech Trends Blog</h1>
-    <p>Exploring Technology, Artificial Intelligence, and Coding</p>
+    <h1>BlueWave Blog</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- Technology Section -->
-    <article>
-      <img src="{% static 'k_blog/img/vr-goggles.jpg' %}" alt="Latest gadgets">
-      <div class="content">
-        <h2>Latest in Technology</h2>
-        <p>From foldable phones to advanced wearables, technology continues to evolve at lightning speed, shaping how we live and work.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to Our Blog</h2>
+    <p>Explore stories, tips, and insights from our team</p>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="blog-container" id="blogList">
+    
+   {% for post in all_posts %}
+    <div class="blog-card">
+      <img src="{% static "k_blog/img/tech.jpg" %}" alt="Tech Blog" />
+      <div class="blog-content">
+        <div class="blog-date">{{ post.date_created }}</div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content | truncatewords:20 }}</p>
+        <a href="#" class="read-more">Read More</a>
       </div>
-    </article>
+    </div>
+   {% endfor %}
+  </section>
 
-    <!-- Artificial Intelligence Section -->
-    <article>
-      <img src="{% static 'k_blog/img/ai.jpg' %}" alt="AI and automation">
-      <div class="content">
-        <h2>AI and Automation</h2>
-        <p>Artificial Intelligence is transforming industries by automating tasks, analyzing data, and improving decision-making.</p>
-      </div>
-    </article>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 BlueWave Blog | Made with 💙 by Your Team</p>
+  </footer>
 
-
-    <!-- Virtual Reality Section -->
-    <article>
-      <img src="{% static 'k_blog/img/programmer.jpg' %}" alt="VR coding">
-      <div class="content">
-        <h2>Coding</h2>
-        <p>Coding allows developers to create software, websites, and apps, transforming ideas into functional digital solutions.</p>
-      </div>
-    </article>
-
-  </main>
+  <script>
+    // Optional: Example of how you could load blogs dynamically
+    // from an array (for future use)
+    const blogs = [
+      // You can populate this dynamically with JS later
+    ];
+  </script>
 </body>
 </html>
